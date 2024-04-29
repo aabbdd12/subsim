@@ -1,0 +1,15 @@
+* April2016 - 
+v 3
+d {bf:AITSIM        : Automated Income Tax Simulation Stata Toolkit}
+d Version       : Version       1.00   
+d Date          : April        2016
+d Stata Version : Required  11.0 and higher
+d
+d AITSIM is a product of the World Bank.
+d
+d Authors : {bf:Abdelkrim Araar}        {bf:Paolo Verme}
+d Emails  : {browse "mailto:aabd@ecn.ulaval.ca":aabd@ecn.ulaval.ca}     {browse "mailto:pverme@worldbank.org":pverme@worldbank.org} 
+d Website : {browse "http://dasp.ecn.ulaval.ca/subsim":www.subsim.org}
+d
+p itsim_part1      Stata Toolkit for Income Tax Reform
+p itsim_part2      Stata Toolkit for Income Tax Reform

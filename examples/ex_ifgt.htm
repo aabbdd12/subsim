@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<title>Policies</title>
+<meta name="description" content="add your site description here" />
+<meta name="keywords" content="add your search engine keywords here separated by commas" />
+<meta name="designer" content="My Arts Desire/Round the Bend Wizards" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="imagetoolbar" content="false" >
+<link rel="stylesheet" type="text/css" href="../style.css" />
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+-->
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+<table width="750">
+<!-- MSTableType="nolayout" -->
+<tbody>
+<tr>
+<td class="sitename">
+<!--webbot bot="Include" U-Include="../include_sitename.htm" TAG="BODY" startspan -->
+
+<p style="margin-top: 0; margin-bottom: 0"><i>DASP</i></p>
+<p style="margin-top: 0; margin-bottom: 0">Distributive Analysis Stata Package
+</p>
+<!--webbot bot="Include" i-checksum="12719" endspan --></td>
+</tr>
+<tr>
+<td>
+<div style="position: absolute; left: 10px; top: 139px; width: 750px; height: 19px" align="center">
+<!--webbot bot="Include" u-include="../include_footer.htm" tag="BODY" startspan -->
+
+<a href="../index.html">Home</a> &bull; 
+<a href="../aboutdasp.htm">About <i>DASP</i></a> &bull; 
+<a href="../manuals.htm">Manuals</a> &bull; 
+<a href="../modules.htm">Modules</a> &bull; 
+<a href="examples.htm">Examples</a> &bull;&nbsp; 
+<a href="../faqs.htm">FAQs</a> &bull; 
+<a href="../contact.htm">Contact</a>
+<!--webbot bot="Include" i-checksum="23212" endspan --></div>
+<p>
+<img src="../images/shadowright.jpg"  height="20" alt="shadow" width="750" /></td>
+</tr>
+<tr>
+<td>
+<h3 align="left">&nbsp;</h3>
+</td>
+</tr>
+<tr>
+<td>
+<h1 style="margin-top: 0; margin-bottom: 0"><span style="font-style: normal">
+<a name="_Ref157778822"><span lang="EN-CA">Estimation of FGT poverty indices</span></a></span></h1>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-CA" style="font-size: 10.0pt; font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">
+How poor was Burkina Faso in 1994?</span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">&nbsp;</span></p>
+<ol>
+	<li>
+	<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+	<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">Open the <b>
+	<i><a href="../modules/DASP_V2.1/data/bkf94.dta">bkf94.dta</a></i></b> file 
+	and label variables and values using the do file
+	<a href="../modules/DASP_V2.1/do_files/lab_bkf94.do">lab_bkf94.do</a>.&nbsp; 
+	Type the <i>
+	describe</i> command and then <i>label list</i> to list labels.</span></li>
+	<li><font size="2"><span style="font-family: Arial">S</span></font><span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">et 
+	the sampling design and then save the file (use variables </span><i>
+	<font size="2" face="Arial">strata, psu, and weight)</font></i></li>
+	<li class="MsoNormal" style="color: black; text-align: justify">
+	<p style="margin-top: 0; margin-bottom: 0">
+	<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">Estimate 
+	the headcount index using variables of interest <i>expcc</i><b> </b>and <i>
+	expeq</i>.</span>
+	<ol style="margin-top: 0cm; margin-bottom: 0cm" start="1" type="a">
+		<li class="MsoNormal" style="color: black; text-align: justify">
+		<p style="margin-top: 0; margin-bottom: 0">
+		<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">You 
+		should set <span style="font-variant: small-caps">Size</span> to 
+		household size in order to estimate poverty over the population of 
+		individuals.</span></li>
+		<li class="MsoNormal" style="color: black; text-align: justify">
+		<p style="margin-top: 0; margin-bottom: 0">
+		<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">Use the 
+		so-called 1994 official poverty line of 41099 Francs CFA per year.</span></li>
+	</ol></li>
+	<li class="MsoNormal" style="color: black; text-align: justify">
+	<p style="margin-top: 0; margin-bottom: 0">
+	<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">Estimate 
+	the headcount index using the same procedure as above except that the 
+	poverty line is now set to 60% of the median.</span></li>
+	<li class="MsoNormal" style="color: black; text-align: justify">
+	<p style="margin-top: 0; margin-bottom: 0">
+	<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">Using the 
+	official poverty line, how does the headcount index for male- and 
+	female-headed households compare? </span></li>
+	<li class="MsoNormal" style="color: black; text-align: justify">
+	<p style="margin-top: 0; margin-bottom: 0">
+	<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">Can you 
+	draw a 99% confidence interval around the previous comparison? Also, set the 
+	number of decimals to 4.</span></li>
+</ol>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: navy">
+Answer </span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: navy">
+Q.1</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">
+If </span>
+	<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial"> <b>
+	<i><a href="../modules/DASP_V2.1/data/bkf94.dta">bkf94.dta</a></i></b></span><span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">
+is saved in the directory <b><i>c:/data</i></b>, type the following command to 
+open it:</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<i><span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">use 
+&quot;C:\data\bkf94.dta&quot;, clear</span></i></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b><span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">
+If <b><i><a href="../modules/DASP_V2.1/do_files/lab_bkf94.do">lab_bkf94.do</a></i></b> 
+is saved in the directory <b><i>c:/do_files</i></b>, type the following command 
+to label variables and labels:</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<i><span lang="EN-US" style="font-size: 10.0pt; font-family: System">do &quot;C:\do_files\lab_bkf94.do&quot;</span></i></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b><span lang="EN-US" style="font-size: 10.0pt; font-family: System">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: System">Typing the 
+command <i>describe</i>, we obtain:</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: System">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">obs:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+8,625&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+vars:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+31 Oct 2006 13:48</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+size:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 285,087 (99.6% of&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+memory free)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+storage&nbsp; display&nbsp; value</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+variable name&nbsp;&nbsp;&nbsp;&nbsp; type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;format&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+label&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+variable label</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+weight&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+float&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %9.0g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Sampling weight</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+size&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %8.0g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Household size</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+strata&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %8.0g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Stratum in which a household lives</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">psu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %8.0g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Primary sampling unit</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">gse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %29.0g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+gse&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Socio-economic group of the household head</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+sex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %8.0g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Sex of household head</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+zone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %8.0g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+zone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Residential area</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+exp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+double&nbsp; %10.0g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Total household expenditures</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+expeq&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+double&nbsp; %10.0g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Total household expenditures per adult equivalent</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+exppc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+float&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %9.0g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Total household expenditures per capita</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: System">Typing <i>
+label list</i>, we find:</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+zone:</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rural</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Urban</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+sex:</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Male</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Female</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">gse:</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+wage-earner (public sector)</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+wage-earner (private sector)</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Artisan or trader</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Other 
+type of earner</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Crop 
+farmer</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Food 
+farmer</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 9.0pt; font-family: Arial; color: navy">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Inactive</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: navy">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: navy">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: navy">
+Q.2</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">
+You can set the sampling design with a dialog box, as indicated in Section 14.3<!--[if gte mso 9]><![endif]-->, 
+or simply by typing </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<i>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">&nbsp;</span></i></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<i>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">
+svyset psu [pweight=weight], strata(strata) vce(linearized)</span></i></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<i>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">&nbsp;</span></i></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">
+Typing <i>svydes</i>, we obtain</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align: left; margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/ex1im1.jpg" width="316" height="291"></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: navy">
+Q.3</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">Type <i>
+<span style="color: black">bd ifgt</span></i><b><span style="color: black">
+</span></b><span style="color: black">to open the dialog box for the FGT poverty 
+index and choose variables and parameters as indicated in the following window. 
+Click on <span style="font-variant: small-caps">Submit</span><b>. </b></span>
+</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: justify; page-break-after: avoid; margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/ex1im2.jpg" width="605" height="302"></p>
+<p class="MsoNormal" style="text-align: justify; page-break-after: avoid; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">
+The following results should then be displayed:</span></p>
+<p align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<img border="0" src="images/ex1im3.jpg" width="481" height="172" align="left"></p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: navy">
+Q.4</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">Select
+<span style="font-variant: small-caps">Relative</span> for the poverty line and 
+set the other parameters as above.</span><span lang="EN-US"> </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b><span lang="EN-US" style="color: black">&nbsp;</span></b></p>
+<p class="MsoNormal" style="page-break-after: avoid; margin-top: 0; margin-bottom: 0">
+<img border="0" src="ex_ifgt_fichiers/image001.png" width="781" height="389"></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">
+After clicking on <span style="font-variant: small-caps">Submit</span>, the 
+following results should be displayed:</span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="color: black">&nbsp;</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<img border="0" src="ex_ifgt_fichiers/image003.png" width="481" height="152"></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: navy">
+Q.5</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: navy">&nbsp;</span></b></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">Set the group 
+variable to <i><span style="color: black">sex</span></i><span style="color: black">.</span></span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="page-break-after: avoid; margin-top: 0; margin-bottom: 0">
+<img border="0" src="ex_ifgt_fichiers/image005.png" width="781" height="389"></p>
+<p class="MsoNormal" style="page-break-after: avoid; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: black">
+Clicking on<span style="font-variant: small-caps"> Submit</span>, the following 
+should appear:</span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="color: black">&nbsp;</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<img border="0" src="ex_ifgt_fichiers/image007.png" width="486" height="194"></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: navy">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b>
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial; color: navy">
+Q.6</span></b></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0">
+<span lang="EN-US" style="font-size: 10.0pt; font-family: Arial">Using the panel
+<span style="font-variant: small-caps">Confidence interval</span><b>, </b>set 
+the confidence level to 99 % and set the number of decimals to 4 in the
+<span style="font-variant: small-caps">Results</span><b> </b>panel.</span></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><span lang="EN-US">
+&nbsp;</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<img border="0" src="ex_ifgt_fichiers/image009.png" width="487" height="195"></p>
+<p class="MsoNormal" align="center" style="text-align: center; margin-top: 0; margin-bottom: 0">
+<span lang="EN-US">&nbsp;</span></p>
+<h2 align="center" style="margin-top: 0; margin-bottom: 0">&nbsp;</h2>
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td class="footerleft" style="background-color: #FFFFFF">
+<!--webbot bot="Include" u-include="../include_footer.htm" tag="BODY" startspan -->
+
+<a href="../index.html">Home</a> &bull; 
+<a href="../aboutdasp.htm">About <i>DASP</i></a> &bull; 
+<a href="../manuals.htm">Manuals</a> &bull; 
+<a href="../modules.htm">Modules</a> &bull; 
+<a href="examples.htm">Examples</a> &bull;&nbsp; 
+<a href="../faqs.htm">FAQs</a> &bull; 
+<a href="../contact.htm">Contact</a>
+<!--webbot bot="Include" i-checksum="23212" endspan --></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</body>
+
+</html>

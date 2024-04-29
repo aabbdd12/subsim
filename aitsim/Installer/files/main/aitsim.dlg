@@ -1,0 +1,618 @@
+/*************************************************************************/
+/* subsim: Subsidy Simulation Stata Toolkit  (Version 1.01)               */
+/*************************************************************************/
+/* Conceived and programmed by Dr. Araar Abdelkrim  (2006-2012)          */
+/* Universite Laval, Quebec, Canada                                      */
+/* email : aabd@ecn.ulaval.ca                                            */
+/* Phone : 1 418 656 7507                                                */
+/*************************************************************************/
+/*   asubsim.dlg                                                          */
+/*************************************************************************/
+
+
+
+VERSION 9.2
+SYNCHRONOUS_ONLY
+
+INCLUDE graph_header
+POSITION . . 860 580
+
+
+DIALOG main, label("TAXSIM| Automated Personal Income Report --> aitsim command") tabtitle("Main")
+BEGIN
+  DEFINE col0  20
+  DEFINE col1 15
+  DEFINE col2 50
+  DEFINE col3 170
+  DEFINE col4 280
+  DEFINE col5 400
+  
+  DEFINE colwd0 55
+  DEFINE colwd1 105
+  DEFINE colwd2 105
+  DEFINE colwd3 80
+  
+
+  DEFINE _x _xsetbu
+  DEFINE _y _top
+  
+    GROUPBOX chk_per11  10    10  410 80,                         ///
+            label("Dialog box inputs: ")           ///
+		   
+    TEXT txt_vname11     20    +20    140      .,                 ///  
+                  label("Load the inputs:   ")                           
+       
+    BUTTON  bu_load    140    @     270      .,                 ///
+    label("Load") onpush("view dialog aitini") 
+	 
+	 
+	TEXT  tx_dbsfile     20    +25    140      .,                 ///  
+         label("Save the inputs:")                           	  
+   
+   FILE  dbsamex      140    @     270      .,                    ///
+    label ("Browse...")    save option("inisave")                   ///
+    filter("MetaFile (*.itp)*.itp*.* (*.*)*.*")   
+	
+	
+	GROUPBOX chk_per3  10    110  410 160,                         ///
+           label("General information: ")         ///
+		   
+    TEXT txt_cname     20    +20    180      .,                 ///  
+                  label("Country:   ")                       
+       
+    EDIT  ed_cname    170    @     240      .,                 ///
+              option(cname)      default() 
+    TEXT txt_ysvy    20    +30    180      .,                 ///  
+                  label("Year of the household survey:   ")                           
+       
+    EDIT  ed_ysvy    170    @    240      .,                 ///
+              	  default() option(ysvy) 
+			  
+    TEXT txt_ysim    20    +30    240      .,                 ///  
+                  label("Year of the simulation:   ")                           
+       
+    EDIT  ed_ysim    170    @     240      .,                 ///
+              	  default() 	option(ysim) 		  
+			  
+	TEXT txt_lcur    20    +30    240      .,                 ///  
+                  label("Local currency:   ")                           
+       
+    EDIT  ed_lcur    170    @     240      .,                 ///
+              	  default() option(lcur) 
+			  
+
+   GROUPBOX chk_per1  10    +60  410 180,                         ///
+           label("Variables of interest: ")                       ///
+
+  TEXT     tx_var01      20   +20    180      .,                 ///
+           label("Household identifier*:   ")  
+		   
+ VARNAME  vn_hhid     210    @     200      .,                 ///
+           option(hhid)  
+  
+  TEXT     tx_var      20    +30    180      .,                 ///
+   label("Per capita welfare*:          ") 
+         
+  VARNAME  vn_pcexp      210    @     200      .,                 ///
+                  
+   TEXT     tx_inc      20    +30    180      .,                 ///
+   label("Personal income*:          ") 
+         
+  
+  COMBOBOX cb_inc   210    @     80      .,                 ///
+		  contents(inc_contents)   values(inc_values)       ///
+          default(1)             ///
+          dropdownlist  option(tyinc)
+  
+  VARNAME  vn_inc     300    @     110      .,                 ///
+    option(income)
+                  
+  
+ TEXT     tx_var3      20   +30    180      .,                 ///
+           label("Household size*:   ")  
+ VARNAME  vn_hhs     210    @     200      .,                 ///
+           option(hsize)    
+ 
+ TEXT     tx_pl1      20   +30    180      .,                 ///
+           label("Poverty line*:   ")  
+ VARNAME  vn_pl1      210    @     200      .,                 ///
+           option(pline)    
+  
+  GROUPBOX chk_per7  10    +80  410 80,                         ///
+           label("Group variable (by default is the quintiles) ")         
+		   
+ TEXT     tx_hhg      20   +30    180       .,                  ///
+           label("Household group:   ")  
+ VARNAME  vn_hhg      210 @     200      .,                      ///
+           option(hgroup)  
+		   
+
+
+ TEXT     txt_note1     10    +60    400      .,                 ///  
+             label("Note: The (*) indicates a required information.")     
+  
+ 
+ /*
+TEXT  tx_dbofile     20    +25    60      .,                 ///  
+label("Open:")                                  ///	  
+            
+        
+FILE  dboamex      80    @     200      .,                 ///
+label ("Browse...")    save option("iniopen")                   ///
+filter("MetaFile (*.def)*.def*.* (*.*)*.*") 
+
+BUTTON   bu_open     290 @       70     .,              ///
+        label("Load") onpush(program initialize)        ///
+        tooltip("Load the dialog box information")
+			
+*/			  
+     
+ GROUPBOX percentile 440    10    410 260,                      ///
+           label("Income tax schedules")
+           
+  /*
+  TEXT     txt_op1     450    +25    120      .,                 ///  
+             label("Approximation approach:")     
+  
+    COMBOBOX  cb_met      580    @     260      .,                 ///
+              dropdownlist                                          ///
+              contents(cb_met)  values(cb_met_val) option(appr)  ///
+            default(1)
+   */
+   
+   /*
+   TEXT     txt_wop     450    +35    120      .,                 ///  
+             label("Impact on well-being:")     
+  
+   COMBOBOX  cb_wmet      580    @     260      .,                 ///
+              dropdownlist                                          ///
+              contents(cb_wmet)  values(cb_wmet_val) option(wappr)  ///
+            default(1)
+ 
+ GROUPBOX chk_tr  440    +70  410 120,                         ///
+           label("Lumpsum transfer")         
+ TEXT     tx_tr      450   +35    120      .,                 ///
+           label("Type of transfer:   ")  
+COMBOBOX  cb_tr      580    @     260      ., 	///
+dropdownlist contents(cb_tr) values(cb_tr_val)	///
+default(1)     option(typetr)     onselchangelist(cond_change) 
+*/
+				  
+TEXT     tx_trg2      450   +25    120      .,                 ///
+           label("Initial schedule :   ")   
+EDIT  ed_itsch    580    @     260      .,                 ///
+              	  default() option(itsch) 
+				  
+				  
+ 
+  
+  
+  
+  /*****/
+  GROUPBOX chk_per88  460    +30  380 200,                         ///
+           label("Final schedule(s): ")         ///
+        
+   TEXT     tx_nscen 480      +30      160       .,           ///
+          label("Number of Scenarios:") 
+         
+  COMBOBOX cb_nscen 670        @        100       .,        ///
+		  contents(scen_contents)                             ///
+          onselchangelist(scen_change) default(1)             ///
+          dropdownlist  option(nscen)
+   
+   TEXT tx_ftax    540    +20         @         .,           ///
+        label("Schedules")
+  
+  TEXT     tx_in3  650      @         @         .,           ///
+        label("Elasticity")		
+			  
+  
+      
+  TEXT     tx_scen1    500      +20       30    . ,           ///
+        label("S_1:") right
+  
+  
+  EDIT   ed_ftsch1     540     @         colwd1    .,           ///
+        option(ftsch1)      
+        
+             
+  VARNAME    var_elas1   650     @         colwd1    .,           ///
+        option(elas1)    
+   
+   
+  TEXT  tx_scen2    500      +30       30    .,           ///
+        label("S_2:") right
+    
+  
+ EDIT   ed_ftsch2    540     @         colwd1    .,           ///
+        option(ftsch2)  
+  
+ VARNAME    var_elas2   650     @         colwd1    .,           ///
+        option(elas2)  
+                 
+          
+  TEXT  tx_scen3    500      +30       30    .,           ///
+        label("S_3:") right
+  
+  EDIT   ed_ftsch3    540     @         colwd1    .,           ///
+        option(ftsch3) 
+
+  VARNAME    var_elas3   650     @         colwd1    .,           ///
+        option(elas3)  
+		
+   CHECKBOX   chk_gvimp     440    +220    300    .,                   ///
+             label("Generate variable    of the impact on wellbeing.") default(0) option(gvimp)
+  
+
+  
+  /****/
+				  
+
+   DEFINE _x 640
+   DEFINE _y 520
+     
+  INCLUDE _bu_svyset
+
+END
+
+LIST scen_contents
+BEGIN
+        1
+        2
+        3
+END
+
+
+LIST scen_change
+BEGIN
+        script scen1
+        script scen2
+        script scen3
+END
+
+SCRIPT scen1
+BEGIN
+        has_scen1.settrue
+        has_scen2.setfalse
+        has_scen3.setfalse
+        program check_items
+
+END
+
+SCRIPT scen2
+BEGIN
+        has_scen1.settrue
+        has_scen2.settrue
+        has_scen3.setfalse
+        program check_items
+
+END
+
+SCRIPT scen3
+BEGIN
+        has_scen1.settrue
+        has_scen2.settrue
+        has_scen3.settrue
+        program check_items
+
+END
+
+
+PROGRAM check_items
+BEGIN
+
+    if has_scen2 {
+                                call main.tx_scen2.show
+                                call main.ed_ftsch2.show
+								call main.var_elas2.show
+				}
+if !has_scen2 {
+		        call main.tx_scen2.hide
+                call main.ed_ftsch2.hide
+				call main.var_elas2.hide
+        }
+		
+        if has_scen3 {
+                                call main.tx_scen2.show
+                                call main.ed_ftsch2.show
+								call main.var_elas2.show
+								call main.tx_scen3.show
+                                call main.ed_ftsch3.show 
+								call main.var_elas3.show
+
+        }
+        if !has_scen3 {
+		        call main.tx_scen3.hide
+                call main.ed_ftsch3.hide   
+				call main.var_elas3.hide
+        }	
+
+
+END
+
+/*
+
+LIST cb_met
+BEGIN
+  Ignore the interaction effect (dp*dq)
+  Estimate with the interaction effect (dp*dq)
+END
+
+LIST cb_met_val
+BEGIN
+ 1
+ 2
+END
+
+LIST cb_wmet
+BEGIN
+  Marginal approach (linear approximation) 
+  Modeling approach (Cobb-Douglas function)
+END
+
+LIST cb_wmet_val
+BEGIN
+ 1
+ 2
+END
+
+*/
+
+
+SCRIPT clear_all
+BEGIN
+        main.cb_scens.setvalue "1"
+        main.ed_ftsch1.setvalue ""
+        main.ed_ftsch2.setvalue ""
+		main.ed_ftsch3.setvalue ""
+        main.ln_scen3.setvalue ""
+		
+
+END
+
+
+
+
+SCRIPT PREINIT
+BEGIN
+      
+        create BOOLEAN has_scen1
+        create BOOLEAN has_scen2
+        create BOOLEAN has_scen3
+		
+
+		create BOOLEAN has_cond1
+		create BOOLEAN has_cond2
+				
+END
+
+
+
+/*
+LIST cond_change
+BEGIN
+        script cond1
+        script cond2
+        
+END
+
+
+SCRIPT cond1
+BEGIN
+        has_cond1.settrue
+        has_cond2.setfalse
+        program check_conds
+END
+
+SCRIPT cond2
+BEGIN
+        has_cond1.setfalse
+        has_cond2.settrue
+        program check_conds
+END
+
+
+
+PROGRAM check_conds
+BEGIN
+if (has_cond1){
+call main.txt_trg.hide
+call main.var_trg.hide
+
+}
+
+if has_cond2 {
+call main.txt_trg.show
+call main.var_trg.show
+}
+END
+*/
+
+PROGRAM POSTINIT_PROGRAM
+BEGIN
+	put "aitini2"
+	stata hidden
+END
+
+
+
+
+
+/* INCLUDE main */
+INCLUDE tb_options_t
+INCLUDE gr_options_t
+
+
+
+LIST cb_trg
+BEGIN
+  Universal 
+  Population group
+END
+
+
+LIST cb_trg_val
+BEGIN
+  un
+  gr
+END
+
+
+
+LIST inc_contents
+BEGIN
+  Gross
+  Net
+END
+
+
+
+LIST  inc_values
+BEGIN
+  1
+  2
+END
+
+
+
+LIST cb_tr_val
+BEGIN
+  1
+  2
+END
+
+
+
+LIST cb_res
+BEGIN
+  Households
+  Persons
+END
+
+LIST cb_res_val
+BEGIN
+ hh
+ per
+END
+
+
+HELP hlp1,   view("help asubsim")
+RESET res1
+OK ok1,      label("OK")
+CANCEL can1, label("Cancel")
+SUBMIT sub1, label("Submit")
+COPY copy1
+
+PROGRAM initialize
+BEGIN
+		*put `"dis  aitini tunisia_sum1"'
+		stata hidden
+END
+
+
+
+
+PROGRAM command
+BEGIN
+        put "aitsim "
+		
+	    require main.vn_pcexp
+        varlist [main.vn_pcexp]
+        
+        put " "
+        
+        beginoptions
+
+		
+        optionarg main.vn_hhs
+		
+		require main.vn_pl1
+	    optionarg main.vn_pl1
+		
+		require main.vn_hhid
+		optionarg main.vn_hhid
+		
+
+		
+	    require main.vn_inc
+        optionarg main.vn_inc
+		
+		
+	    if !main.cb_inc.isdefault() {
+                           optionarg main.cb_inc
+                               } 
+
+ 
+		
+		
+	
+						 optionarg main.vn_hhg
+                      
+      
+                        optionarg tb_options_t.fnamex
+						
+						optionarg main.dbsamex
+						
+						
+						 optionarg main.ed_itsch 
+						 
+						 optionarg main.cb_nscen
+						 
+						  optionarg main.ed_ftsch1
+						  optionarg main.ed_ftsch2
+						  optionarg main.ed_ftsch3
+						  
+						  optionarg main.var_elas1
+						  optionarg main.var_elas2
+						  optionarg main.var_elas3
+						  
+						  
+						  optionarg main.ed_cname  
+							optionarg main.ed_ysvy  
+							optionarg main.ed_ysim    
+							optionarg main.ed_lcur 
+						 
+						 
+						
+						optionarg gr_options_t.ed_folgr
+                        
+                        if !tb_options_t.cb_lan.isdefault(){
+                        optionarg tb_options_t.cb_lan
+                        }
+       /*
+		optionarg tb_options_t.ed_aggr
+		optionarg gr_options_t.ged_aggr
+		*/
+		optionarg tb_options_t.chk_sum
+		optionarg tb_options_t.ed_tab
+        optionarg gr_options_t.ed_gra         
+        
+		
+ 
+		/*
+		optionarg main.var_trg
+		optionarg main.chk_gvimp 
+		optionarg main.chk_gvqnt
+		*/
+		
+	   /*
+	    put " "  /program item1_output 
+        put " "  /program item2_output 
+        put " "  /program item3_output 
+        put " "  /program item4_output 
+        put " "  /program item5_output 
+        put " "  /program item6_output 
+		put " "  /program item7_output 
+		put " "  /program item8_output 
+		put " "  /program item9_output 
+		put " "  /program item10_output 
+		*/
+		/*
+		put " " /program  var_output
+	    
+		put " " /program  gra_output
+		*/
+	   endoptions 
+        
+        
+END

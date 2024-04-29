@@ -1,0 +1,22 @@
+*! version 1.00  03-Mayo-2017   M. Araar Abdelkrim & M. Paolo verme
+ version 10
+        class oinf_it {
+                         string  vmax
+                         string  vtax
+			             double  oinf
+        }
+		
+	program .new
+                        if "`0'" != "" {
+                                .set `0'
+                        }
+        end
+
+        program .set
+                     args vmax vtax oinf
+                       
+                         .vmax     = "`vmax'"
+			             .vprice   = "`vprice'"
+						 .oinf     =  `oinf'
+
+        end

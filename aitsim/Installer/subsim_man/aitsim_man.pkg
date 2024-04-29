@@ -1,0 +1,17 @@
+* April2016 - 
+v 1
+d {bf:aitsim_man        : AITSIM MANAGER}
+d Version       : Version       1.00   
+d Date          : April        2016
+d Stata Version : Required  11.0 and higher
+
+d Authors : {bf:Abdelkrim Araar}        {bf:Paolo Verme}
+d Emails  : {browse "mailto:aabd@ecn.ulaval.ca":aabd@ecn.ulaval.ca}     {browse "mailto:pverme@worldbank.org":pverme@worldbank.org} 
+d Website : {browse "http://dasp.ecn.ulaval.ca/subsim":www.subsim.org}
+d
+d Description   : The dialog box subsim_man can be used to install and manage the SUBSIM package. 
+d                 The user can install, update or check the SUBSIM version.
+f  aitsim_man.dlg
+f _itsim_vers.ado
+f _itsim_inst.ado
+f aitsim_man_intro.pdf      

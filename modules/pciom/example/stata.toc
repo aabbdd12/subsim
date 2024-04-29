@@ -1,0 +1,17 @@
+* November2014 - 
+v 3
+ SUBSIM          : Subsidy Simulation Stata Toolkit (pciom module)
+                       
+d ===================================================
+d Version       : Version   3   
+d Date          : November      2014 
+d Stata Version : Required  11.0 and higher
+d
+d SUBSIM is a product of the World Bank.
+d
+d Authors: Abdelkrim Araar  (aabd@ecn.ulaval.ca) and  Paolo Verme (pverme@worldbank.org)
+d
+d
+d ===================================================
+p pciom      pciom Stata module
+

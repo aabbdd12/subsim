@@ -1,0 +1,36 @@
+
+
+VERSION 11
+INCLUDE _std_medium
+POSITION . . 420 _dlght
+
+DIALOG main, title("AITSIM: Package Manager")
+BEGIN
+
+        BUTTON   bt_install      90  20  240  30, ///
+                label("Install/Update AITSIM Package")    onpush(program install_ait)
+				
+        BUTTON   bt_check @        _xls  @         @,  ///
+                label("Check for Updates") onpush(program check_ait_ver)
+
+        BUTTON   bt_refs      @        _xls  @         @, ///
+                label("Basic AITSIM References") onpush(view help aitsim)
+        BUTTON   bt_www         @        _xls  @         @, label("Go to AITSIM Website") onpush(view browse www.subsim.org/aitsim/)
+
+END
+
+
+
+		
+PROGRAM check_ait_ver
+BEGIN
+	put "_itsim_vers"
+	stata
+END
+
+		
+PROGRAM install_ait
+BEGIN
+	put "_itsim_inst"
+	stata
+END

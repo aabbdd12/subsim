@@ -1,0 +1,37 @@
+*! version 1.00  03-Mayo-2017   M. Araar Abdelkrim & M. Paolo verme
+
+VERSION 9.2
+
+
+INCLUDE graph_header
+//INCLUDE header
+POSITION . . 560 100
+
+
+DIALOG main, label("TAXSIM| Initialise the dialog box of the  command: actsim") tabtitle("Main")
+
+  
+BEGIN
+  TEXT     tx_using      20     20     200        .,       ///
+        label("Filename of actsim dialog box inputs:")
+
+        FILE  fnamex      220    @     280      .,    ///
+        label ("Browse...")    save                    ///
+        filter("MetaFile (*.act)|*.act|*.* (*.*)|*.*")  
+  
+END
+
+
+HELP hlp1,   view("help ataxini_act")
+RESET res1
+OK ok1,      label("OK")
+CANCEL can1, label("Cancel")
+COPY copy1
+
+PROGRAM command
+BEGIN
+        require main.fnamex
+		put "ataxini_act"
+		put `"""' main.fnamex `"""'
+        
+END

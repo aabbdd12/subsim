@@ -1,0 +1,37 @@
+*! version 3.00  15-December-2014   M. Araar Abdelkrim & M. Paolo verme
+
+VERSION 9.2
+
+
+INCLUDE graph_header
+//INCLUDE header
+POSITION . . 560 100
+
+
+DIALOG main, label("SUBSIM| Initialise the dialog box of the asubsim command: asubini_ind") tabtitle("Main")
+
+  
+BEGIN
+  TEXT     tx_using      20     20     200        .,       ///
+        label("Filename of asubsim dialog box inputs:")
+
+        FILE  fnamex      220    @     280      .,    ///
+        label ("Browse...")    save                    ///
+        filter("MetaFile (*.pri)|*.pri|*.* (*.*)|*.*")  
+  
+END
+
+
+HELP hlp1,   view("help asubini")
+RESET res1
+OK ok1,      label("OK")
+CANCEL can1, label("Cancel")
+COPY copy1
+
+PROGRAM command
+BEGIN
+        require main.fnamex
+		put "asubini_ind  "
+		put `"""' main.fnamex `"""'
+        
+END

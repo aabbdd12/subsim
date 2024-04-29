@@ -1,0 +1,22 @@
+ version 10
+        class block {
+                         double min
+                         double max
+			             double price
+			             double subside
+        }
+		
+	program .new
+                        if "`0'" != "" {
+                                .set `0'
+                        }
+        end
+
+        program .set
+                     args min max price subside
+                         .min     = `min'
+                         .max     = `max'
+			             .price   = `price'
+			             .subside = `subside'
+
+        end

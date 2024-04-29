@@ -1,0 +1,32 @@
+* Mayo2017 - 
+v 1
+d {bf:aitsim_man        : TAXSIM: PART_2 of the package}
+d Version       : Version       1.00   
+d Date          : April        2014
+d Stata Version : Required  11.0 and higher
+d
+d Authors : {bf:Abdelkrim Araar}        {bf:Paolo Verme}
+d Emails  : {browse "mailto:aabd@ecn.ulaval.ca":aabd@ecn.ulaval.ca}     {browse "mailto:pverme@worldbank.org":pverme@worldbank.org} 
+d Website : {browse "http://dasp.ecn.ulaval.ca/subsim/taxsim":www.subsim.org/taxsim}
+d
+d
+f files/main/it_basicstats.ado
+f files/main/it_tabtit.ado
+f files/main/jgraphs_it.sthlp
+f files/main/jtables_it.sthlp
+f files/main/mk_xtab_m2.ado
+f files/main/nettogross.ado
+f files/main/notes
+f files/main/oinf_it.class
+f files/main/pschdes2.ado
+f files/main/range.class
+f files/main/subjobgr2.ado
+f files/main/subjobgr3.ado
+f files/main/subjobineq.ado
+f files/main/tb_options_t.idlg
+f files/main/tgropt.ado
+f files/main/to_reuse
+f files/main/xml_taba2.ado
+f files/main/_taxsim_inst.ado
+f files/main/_taxsim_menu.ado
+f files/main/_taxsim_vers.ado

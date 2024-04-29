@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+<title>DASP Stata Package</title>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="description" content="add your site description here" />
+<meta name="keywords" content="add your search engine keywords here separated by commas" />
+<meta name="designer" content="My Arts Desire/Round the Bend Wizards" />
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="imagetoolbar" content="false" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
+}
+.auto-style2 {
+	margin-left: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper" style="width: 750px; height: 839px">
+<table>
+<tbody>
+<tr>
+<td colspan="2" class="sitename">
+<!--webbot bot="Include" U-Include="include_sitename.htm" TAG="BODY" startspan -->
+<p style="margin-top: 0; margin-bottom: 0"><i>SUBSIM</i></p>
+<p style="margin-top: 0; margin-bottom: 0">SUBsidy SIMulation Stata Package
+</p>
+<!--webbot bot="Include" endspan i-checksum="60942" --></td>
+</tr>
+<tr>
+<td><img src="images/shadowleft.jpg" width="250" height="15" alt="shadow" /></td>
+<td>
+<img src="images/shadowright.jpg" width="500" height="15" alt="shadow" style="background-color: #0066FF" /></td>
+</tr>
+<tr>
+<td class="sidebar">
+<!--webbot bot="Include" u-include="include_mainnavigation.htm" tag="BODY" startspan --><div class="sidebarnav">
+<ul>
+<li><a href="index.html">Home</a> </li>
+	<li><a href="Model.html">Features</a></li>
+<li><a href="ECNServices.htm">Installation</a></li>
+<li><a href="manuals.htm">Documentation</a></li>
+<li><a href="training.htm">Training</a></li>
+<li><a href="countries.htm">Countries</a></li>
+<li><a href="faqs.htm">FAQs</a></li>
+<li><a href="contact.htm">Contacts</a></li>
+</ul>
+<p>&nbsp;</div>
+<!--webbot bot="Include" endspan i-checksum="62989" --></td>
+<td class="maintext">
+<p align="center"><font style="font-size: 17pt" color="#000080" face="Georgia">
+<b>Installation</b></font></p>
+<p class="MsoNormal">
+<span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-ansi-language: EN-US">
+To install SUBSIM simply execute the following command lines in STATA:<o:p></o:p></span></p>
+<p class="auto-style2"><i><span style="color: black">set more off<o:p></o:p></span></i></p>
+<p class="auto-style2"><i><span style="color: black">net from
+<a href="http://dasp.ecn.ulaval.ca/subsim/Installer">http://dasp.ecn.ulaval.ca/subsim/Installer</a><o:p></o:p></span></i></p>
+<p class="auto-style2"><i><span style="color: black">net install subsim_part1, 
+force<o:p></o:p></span></i></p>
+<p class="auto-style2"><i><span style="color: black">net install subsim_part2, 
+force<o:p></o:p></span></i></p>
+<p class="auto-style2"><i><span style="color: black">cap addSMenu profile.do 
+_subsim_menu<o:p></o:p></span></i></p>
+<p>
+<o:p>Once the package is installed, use the SUBSIM package manager for updates 
+and for consulting this website.</o:p></p>
+<p class="auto-style1" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="auto-style1" style="margin-top: 0; margin-bottom: 0"><b>
+<span lang="en-ca"><font color="#1F497D" size="5">Important Note</font></span></b></p>
+<p align="left"><font face="Gorgia">The last Stata command line tries to add 
+	the file profile.do automatically or add the command _subsim_menu in 
+	the file <b><a href="modules/subsim2/profile.do"><font color="#0066FF"><u>
+<span style="font-weight: 400">profile.do</span></u></font></a></b> if the 
+	latter exists already. If this last command does not function, you have to copy the
+<b><a href="modules/subsim2/profile.do"><font color="#0066FF"><u>
+<span style="font-weight: 400">profile.do</span></u></font></a></b> file as 
+indicated below:</font><ol>
+	<li type="a">
+	<p align="left" style="margin-top: 0; margin-bottom: 0"><font face="Gorgia">
+	<i>Windows&nbsp; OS system: </i>copy the file in <b>c:/ado/personal/</b></font></li>
+	<li type="a">
+	<p align="left" style="margin-top: 0; margin-bottom: 0"><font face="Gorgia">
+	<i>Macintosh system: </i>copy the file in one of the 
+		Stata system directories. To find these directories, type the command 
+		sysdir. </font></li>
+</ol>
+<p>&nbsp;</td>
+</tr>
+<tr>
+<td class="footerleft" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td class="footerleft">
+<!--webbot bot="Include" u-include="include_copyright.htm" tag="BODY" startspan -->
+SUBSIM © 2012-2016
+
+<!--webbot bot="Include" endspan i-checksum="28420" --><p>&nbsp;</td>
+<td class="footerleft">
+<p>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</div>
+
+</body>
+
+</html>

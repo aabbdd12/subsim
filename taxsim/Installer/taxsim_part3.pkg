@@ -1,0 +1,25 @@
+* Mayo2017 - 
+v 1
+d {bf:aitsim_man        : TAXSIM: PART_3 of the package}
+d Version       : Version       1.00   
+d Date          : April        2014
+d Stata Version : Required  11.0 and higher
+d
+d Authors : {bf:Abdelkrim Araar}        {bf:Paolo Verme}
+d Emails  : {browse "mailto:aabd@ecn.ulaval.ca":aabd@ecn.ulaval.ca}     {browse "mailto:pverme@worldbank.org":pverme@worldbank.org} 
+d Website : {browse "http://dasp.ecn.ulaval.ca/subsim/taxsim":www.subsim.org/taxsim}
+d
+
+f files/main/aactsim.ado       
+f files/main/actsim.ado        
+f files/main/actsim.dlg        
+f files/main/actsim.sthlp      
+f files/main/asdbsave_act.ado  
+f files/main/ataxini.ado       
+f files/main/ataxini2.ado      
+f files/main/ataxini2_act.ado  
+f files/main/ataxini_act.ado   
+f files/main/ataxini_act.dlg   
+f files/main/items_info_act.idlg
+f files/main/pciom_act.ado  
+f files/main/taxsim.dlg 

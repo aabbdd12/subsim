@@ -1,0 +1,79 @@
+* November2014 - 
+v 3
+d {bf:subsim_man        : SUBSIM: PART_1 of the package}
+d
+d Version       : Version       3.03  
+d Date          : January      2015 
+d Stata Version : Required  11.0 and higher
+d
+d Authors : {bf:Abdelkrim Araar}        {bf:Paolo Verme}
+d Emails  : {browse "mailto:aabd@ecn.ulaval.ca":aabd@ecn.ulaval.ca}     {browse "mailto:pverme@worldbank.org":pverme@worldbank.org} 
+d Website : {browse "http://dasp.ecn.ulaval.ca/subsim":www.subsim.org}
+d
+
+f files/main/taggr.sthlp  
+f files/main/gaggr.sthlp          
+f files/main/aggrvar.ado       
+f files/main/asdbsave.ado      
+f files/main/asubini.ado       
+f files/main/asubini.dlg       
+f files/main/asubini2.ado      
+f files/main/asubsim.ado       
+f files/main/asubsim.dlg       
+f files/main/asubsim.sthlp       
+f files/main/basicstats.ado    
+f files/main/block.class
+f files/main/oinf.class        
+f files/main/clore.ado         
+f files/main/curvnpe.ado       
+f files/main/distable.ado      
+f files/main/extend_opt_graph.ado
+f files/main/extend_opt_price.ado
+f files/main/extend_opt_item.ado
+f files/main/extend_opt_shocks.ado
+f files/main/gropt.ado         
+f files/main/gr_options.idlg   
+f files/main/imq0sub.ado       
+f files/main/imqsub.ado        
+f files/main/imqsub_cob_doug.ado
+f files/main/imrsub.ado        
+f files/main/imsref.ado        
+f files/main/imwegsub.ado      
+f files/main/imwsub.ado        
+f files/main/imwsub_cob_doug.ado
+f files/main/incsub.ado        
+f files/main/items_info.idlg   
+f files/main/jgraphs.sthlp       
+f files/main/jtables.sthlp       
+f files/main/mk_xtab_m2.ado    
+f files/main/nargs.ado         
+f files/main/pschdb.ado        
+f files/main/pschdes.ado
+f files/main/pschdes2.ado        
+f files/main/pschdes.dlg       
+f files/main/pschdes.sthlp       
+f files/main/pschedule.class   
+f files/main/pschini.ado       
+f files/main/pschini.dlg       
+f files/main/pschini2.ado      
+f files/main/pschinis.ado
+f files/main/pschinis2.ado       
+f files/main/pschset.ado       
+f files/main/pschset.dlg       
+f files/main/pschset.sthlp       
+f files/main/pschseti.idlg     
+f files/main/pschsetn.ado      
+f files/main/pschsetv.ado      
+f files/main/pschset_f_1.dlg   
+f files/main/pschset_f_10.dlg  
+f files/main/pschset_f_2.dlg   
+f files/main/pschset_f_3.dlg   
+f files/main/pschset_f_4.dlg   
+f files/main/pschset_f_5.dlg   
+f files/main/pschset_f_6.dlg   
+f files/main/pschset_f_7.dlg   
+f files/main/pschset_f_8.dlg   
+f files/main/pschset_f_9.dlg   
+f files/main/pschset_i_1.dlg   
+f files/main/pschset_i_10.dlg  
+f files/main/pschset_i_2.dlg 

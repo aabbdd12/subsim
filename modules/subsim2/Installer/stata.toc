@@ -1,0 +1,17 @@
+* April 2014 - 
+ v 3
+ SUBSIM          : Subsidy Simulation Stata Toolkit
+                       
+d ===================================================
+d Version       : Version    2.1    
+d Date          : April      2014 
+d Stata Version : Required   11.0 and higher
+d
+d SUBSIM is a product of the World Bank.
+d
+d Authors: Abdelkrim Araar  (aabd@ecn.ulaval.ca) and  Paolo Verme (pverme@worldbank.org)
+d
+d
+d ===================================================
+p subsim2_part1      Stata Toolkit for Price Schedule Reforms
+p subsim2_part2      Stata Toolkit for Price Schedule Reforms

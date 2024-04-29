@@ -1,0 +1,20 @@
+
+
+* November2014 - 
+v 3
+d {bf:subsim_man        : SUBSIM package manager}
+d
+d Version       : Version       3.00   
+d Date          : November      2014 
+d Stata Version : Required  11.0 and higher
+d Description   : The dialog box subsim_man can be used to manage the SUBSIM package. 
+d                 The user can install, update or check the SUBSIM version.
+d
+d Authors : {bf:Abdelkrim Araar}        {bf:Paolo Verme}
+d Emails  : {browse "mailto:aabd@ecn.ulaval.ca":aabd@ecn.ulaval.ca}     {browse "mailto:pverme@worldbank.org":pverme@worldbank.org} 
+d Website : {browse "http://www.stata.com":visit the SUBSIM website}
+d
+
+f  subsim_man.dlg
+f _subsim_vers.ado
+f _subsim_inst.ado      

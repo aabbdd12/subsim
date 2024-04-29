@@ -1,0 +1,31 @@
+*! version 1.00  15-December-2015   M. Araar Abdelkrim & M. Paolo verme
+       version 13
+        class itschedule {
+		        double nrange
+				double exemp
+				double str
+				double bun
+				array  oin
+				array  ran        
+        }
+        
+	    program .new
+                        if "`0'" != "" {
+                                .set `0'
+                        }
+        end
+
+        program .set
+                         args nrange exemp str bun
+                         .nrange   =  `nrange'
+						 .exemp   =  `exemp'
+						 .str      =  `str'
+						 .bun      =  `bun'
+        end
+
+		 
+
+	 
+
+				
+       

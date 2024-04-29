@@ -1,0 +1,13 @@
+.pschset_i_1_dlg.main.cb_ini.setvalue    1
+.pschset_i_1_dlg.main.cb_bracs.setvalue  2
+.pschset_i_1_dlg.main.ed_bracs.setvalue  1
+.pschset_i_1_dlg.main.cb_bun.setvalue    2
+.pschset_i_1_dlg.main.en_mxb1.setvalue    "36"
+.pschset_i_1_dlg.main.en_tarif1.setvalue  "0.1"
+.pschset_i_1_dlg.main.en_sub1.setvalue    "0.3"
+.pschset_i_1_dlg.main.en_mxb2.setvalue    "200"
+.pschset_i_1_dlg.main.en_tarif2.setvalue  "0.4"
+.pschset_i_1_dlg.main.en_sub2.setvalue    "0.0"
+.pschset_i_1_dlg.main.var_mxb.setvalue     ""
+.pschset_i_1_dlg.main.var_tr.setvalue      ""
+.pschset_i_1_dlg.main.var_sub.setvalue     ""

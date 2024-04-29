@@ -1,0 +1,37 @@
+*! version 1.00  03-Mayo-2017   M. Araar Abdelkrim & M. Paolo verme
+
+VERSION 9.2
+
+
+INCLUDE graph_header
+//INCLUDE header
+POSITION . . 560 100
+
+
+DIALOG main, label("TAXSIM| Initialise the dialog box of the aitsim command: aitini") tabtitle("Main")
+
+  
+BEGIN
+  TEXT     tx_using      20     20     200        .,       ///
+        label("Filename of aitsim dialog box inputs:")
+
+        FILE  fnamex      220    @     280      .,    ///
+        label ("Browse...")    save                    ///
+        filter("MetaFile (*.itp)|*.itp|*.* (*.*)|*.*")  
+  
+END
+
+
+HELP hlp1,   view("help aitini")
+RESET res1
+OK ok1,      label("OK")
+CANCEL can1, label("Cancel")
+COPY copy1
+
+PROGRAM command
+BEGIN
+        require main.fnamex
+		put "aitini  "
+		put `"""' main.fnamex `"""'
+        
+END

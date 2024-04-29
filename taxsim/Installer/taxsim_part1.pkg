@@ -1,0 +1,60 @@
+* Mayo2017 - 
+v 1
+d {bf:aitsim_man        : TAXSIM: PART_1 of the package}
+d Version       : Version       1.00   
+d Date          : April        2014
+d Stata Version : Required  11.0 and higher
+d
+d Authors : {bf:Abdelkrim Araar}        {bf:Paolo Verme}
+d Emails  : {browse "mailto:aabd@ecn.ulaval.ca":aabd@ecn.ulaval.ca}     {browse "mailto:pverme@worldbank.org":pverme@worldbank.org} 
+d Website : {browse "http://dasp.ecn.ulaval.ca/subsim/taxsim":www.subsim.org/taxsim}
+d
+d
+f files/main/addITMenu.ado
+f files/main/aitdbsave.ado
+f files/main/aitini.ado
+f files/main/aitini.dlg
+f files/main/aitini2.ado
+f files/main/aitsim.ado
+f files/main/aitsim.dlg
+f files/main/aitsim.sthlp
+f files/main/aitsim_man.dlg
+f files/main/distable.ado
+f files/main/EASI
+f files/main/example
+f files/main/gr_options_t.idlg
+f files/main/icschini.ado
+f files/main/imrit.ado
+f files/main/imwit.ado
+f files/main/inc_tax.ado
+f files/main/Installer
+f files/main/itjob11.ado
+f files/main/itjob21.ado
+f files/main/itjob31.ado
+f files/main/itjob32.ado
+f files/main/itjob41.ado
+f files/main/itjob42.ado
+f files/main/itjob43.ado
+f files/main/itjob44.ado
+f files/main/itjob45.ado
+f files/main/itjob46.ado
+f files/main/itjob47.ado
+f files/main/itjob48.ado
+f files/main/itjob49.ado
+f files/main/itjobgr1.ado
+f files/main/itjobgr2.ado
+f files/main/itjobgr3.ado
+f files/main/itjobgr4.ado
+f files/main/itjobineq.ado
+f files/main/itjobpov.ado
+f files/main/itjobprog.ado
+f files/main/itjobprogw.ado
+f files/main/itjobstat.ado
+f files/main/itschdes.ado
+f files/main/itschdes.dlg
+f files/main/itschdes2.ado
+f files/main/itschedule.class
+f files/main/itschini.dlg
+f files/main/itschini2.ado
+f files/main/itschset.ado
+f files/main/itschset.dlg

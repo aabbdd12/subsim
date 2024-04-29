@@ -1,0 +1,622 @@
+/*************************************************************************/
+/* subsim: Subsidy Simulation Stata Toolkit  (Version 2.X)               */
+/*************************************************************************/
+/* Conceived and programmed by Dr. Araar Abdelkrim  (2012-2016)          */
+/* Universite Laval, Quebec, Canada                                      */
+/* email : aabd@ecn.ulaval.ca                                            */
+/* Phone : 1 418 656 7507                                                */
+/*************************************************************************/
+/*   pciom.dlg                                                          */
+/*************************************************************************/
+
+
+
+VERSION 9.2
+SYNCHRONOUS_ONLY
+
+INCLUDE graph_header
+POSITION . . 860 360
+
+
+DIALOG main, label("SUBSIM| I/O Matrix and price changes --> pciom command") tabtitle("Main")
+BEGIN
+  DEFINE col0  20
+  DEFINE col1 15
+  DEFINE col2 50
+  DEFINE col3 170
+  DEFINE col4 280
+  DEFINE col5 400
+  
+  DEFINE colwd0 55
+  DEFINE colwd1 105
+  DEFINE colwd2 105
+  DEFINE colwd3 80
+  
+
+  DEFINE _x _xsetbu
+  DEFINE _y _top
+  
+  GROUPBOX chk_per11  10    10  410 120,                         ///
+            label("Input/Output matrix information: ")           ///
+                       
+	
+  TEXT     tx_var       20    +25    140      .,                 ///
+   label("Code of sectors:*          ") 
+         
+  VARNAME  vn_code      150    @     260      .,  ///
+  option(code)
+  
+  TEXT     tx_var2       20    +25    140      .,                 ///
+   label("Short name of sectors:          ") 
+         
+  VARNAME  vn_sname      150    @     260      .,  ///
+  option(labsec)
+
+
+  
+ 		
+ GROUPBOX iogr 440    10    410 120,                      ///
+           label("I/O price change model")			
+			
+        TEXT     tx_ap_ini 450     +25       120       .,           ///
+          label("The main model:") 
+      
+COMBOBOX cb_ioap 570      @          270       .,       ///
+          contents(comb_appr_ini)                             ///
+          values(comb_appr_val)                                     ///                            
+          default(1)                  ///
+          dropdownlist option(iomodel) 	 onselchangelist(cond2_change)
+		  
+ TEXT     tx_ap_ini_sh 450     +25       120       .,           ///
+          label("Price shocks:") 
+      
+COMBOBOX cb_ioap_sh 570      @          270       .,       ///
+          contents(comb_appr_sh_ini)                             ///
+          values(comb_appr_sh_val)                                     ///                            
+          default(1)                  ///
+          dropdownlist option(tyshock) 		
+		  
+		  
+ TEXT     tx_np 740    +25        100       .,           ///
+          label("Number of periods") 
+  
+
+ 
+		  
+ TEXT     tx_ap_ini_ad 450     +15       120       .,           ///
+          label("Price adjustment:") 
+      
+COMBOBOX cb_ioap_ad 570      @          150       .,       ///
+          contents(comb_appr_ad_ini)                             ///
+          values(comb_appr_ad_val)                                     ///                            
+          default(1)    onselchangelist(shock_adjust)              ///
+          dropdownlist option(adshock) 	
+		  
+
+		  
+  
+ EDIT     ed_np   740    @     100      .,                 ///
+              option(nadp)      default(1)     
+      		  
+	       
+		
+   GROUPBOX chk_per22  10    +50  760 140,                         ///
+            label("Price shock and I/O matrix info: ")    
+ 			 
+				 
+ 
+    TEXT  tx_dbsfile     20    +20    160      .,                 ///  
+         label("Data file of the I/O matrix:*")                                
+   
+    FILE  dbiom      220    @     260      .,                    ///
+    label ("Browse...")    save option("iom")                   ///
+    filter("MetaFile (*.dta)*.dta*.* (*.*)*.*") 
+	
+   TEXT     tx_nshocks 20      +30      160       .,           ///
+          label("Number of Exogenous shocks:") 
+         
+   COMBOBOX cb_nshocks 220        @        100       .,        ///
+		  contents(shock_contents)                             ///
+          onselchangelist(shock_change) default(1)             ///
+          dropdownlist  option(nshocks)
+                   
+  
+			 
+    
+	TEXT  tx_secp1   300    +25     60      .,                 ///
+             label("Shock 1")  
+    
+	TEXT  tx_secp2   370    @     60      .,                 ///
+             label("Shock 2")  
+			 
+	TEXT  tx_secp3   440    @     60      .,                 ///
+             label("Shock 3")  		 
+	
+	TEXT  tx_secp4   510    @     60      .,                 ///
+             label("Shock 4")  
+
+	TEXT  tx_secp5   580    @     60      .,                 ///
+             label("Shock 5")  
+	
+	TEXT  tx_secp6   650    @     60      .,                 ///
+             label("Shock 6")  
+			 
+	TEXT txt_secp     20    +15    300      .,                 ///  
+                  label("The position of sector(s) concerned by  price change(s):*")
+	EDIT  ed_secp1   300    @     60      .,                 ///
+              option(secp1)      default(1) 
+			  
+    EDIT  ed_secp2   370    @     60      .,                 ///
+              option(secp2)      default(2) 
+			  
+    EDIT  ed_secp3   440    @     60      .,                 ///
+              option(secp3)      default(3)
+			  
+	EDIT  ed_secp4   510    @     60      .,                 ///
+              option(secp4)      default(4) 
+			  
+    EDIT  ed_secp5   580    @     60      .,                 ///
+              option(secp5)      default(5) 
+			  
+    EDIT  ed_secp6   650    @     60      .,                 ///
+              option(secp6)      default(6) 
+			  
+			  
+	TEXT txt_pr    20    +20    280      .,                 ///  
+                  label("The level of the exogeneous price change (in %):*   ")                           
+       
+    EDIT  ed_pr1    300    @    60      .,                 ///
+                  default(10) option(pr1) 
+	
+	EDIT  ed_pr2    370    @    60      .,                 ///
+                  default(10) option(pr2)
+	
+	EDIT  ed_pr3    440    @    60      .,                 ///
+                  default(10) option(pr3) 
+
+	EDIT  ed_pr4    510    @    60      .,                 ///
+                  default(10) option(pr4) 
+
+	EDIT  ed_pr5    580    @    60      .,                 ///
+                  default(10) option(pr5) 
+ 
+    EDIT  ed_pr6    650    @    60      .,                 ///
+                  default(10) option(pr6) 
+
+ 
+   DEFINE _x 640
+   DEFINE _y 520
+     
+  INCLUDE _bu_svyset
+
+END
+
+
+
+LIST shock_contents
+BEGIN
+        1
+        2
+        3
+		4
+		5
+		6
+END
+
+LIST comb_appr_sh_val
+BEGIN
+	1
+	2
+END
+
+LIST comb_appr_sh_ini
+BEGIN
+	Permanent (exogenous) 
+	Temporal  (endogenous price adjustment)
+END
+
+
+
+LIST comb_appr_ad_val
+BEGIN
+	1
+	2
+END
+
+
+LIST comb_appr_ad_ini
+BEGIN
+	Short term
+	Long  term
+END
+
+
+
+LIST comb_appr_val
+BEGIN
+	1
+	2
+END
+
+LIST comb_appr_ini
+BEGIN
+	M1: Cost push prices
+	M2: Marginal profit push prices
+END
+
+
+SCRIPT PREINIT
+BEGIN
+		
+		create BOOLEAN has_shock1
+        create BOOLEAN has_shock2
+        create BOOLEAN has_shock3
+        create BOOLEAN has_shock4
+        create BOOLEAN has_shock5
+        create BOOLEAN has_shock6
+		create BOOLEAN has_ad1
+		create BOOLEAN has_ad2
+		create BOOLEAN has_cond11
+        create BOOLEAN has_cond22
+END		
+
+LIST shock_change
+BEGIN
+        script shock1
+        script shock2
+        script shock3
+        script shock4
+        script shock5
+        script shock6
+
+END
+
+LIST shock_adjust
+BEGIN
+        script adjust1
+        script adjust2
+
+END
+
+
+
+SCRIPT adjust1
+BEGIN
+        has_ad1.settrue
+        has_ad2.setfalse
+		program check_items
+END
+
+SCRIPT adjust2
+BEGIN
+        has_ad1.setfalse
+        has_ad2.settrue
+		program check_items
+END
+
+
+
+SCRIPT shock1
+BEGIN
+        has_shock1.settrue
+        has_shock2.setfalse
+        has_shock3.setfalse
+        has_shock4.setfalse
+        has_shock5.setfalse
+        has_shock6.setfalse
+        program check_items
+END
+
+SCRIPT shock2
+BEGIN
+        has_shock1.settrue
+        has_shock2.settrue
+        has_shock3.setfalse
+        has_shock4.setfalse
+        has_shock5.setfalse
+        has_shock6.setfalse
+        program check_items
+END
+
+SCRIPT shock3
+BEGIN
+        has_shock1.settrue
+        has_shock2.settrue
+        has_shock3.settrue
+        has_shock4.setfalse
+        has_shock5.setfalse
+        has_shock6.setfalse
+        program check_items
+END
+
+SCRIPT shock4
+BEGIN
+        has_shock1.settrue
+        has_shock2.settrue
+        has_shock3.settrue
+        has_shock4.settrue
+        has_shock5.setfalse
+        has_shock6.setfalse
+        program check_items
+END
+
+
+SCRIPT shock5
+BEGIN
+        has_shock1.settrue
+        has_shock2.settrue
+        has_shock3.settrue
+        has_shock4.settrue
+        has_shock5.settrue
+        has_shock6.setfalse
+        program check_items
+END
+
+
+SCRIPT shock6
+BEGIN
+        has_shock1.settrue
+        has_shock2.settrue
+        has_shock3.settrue
+        has_shock4.settrue
+        has_shock5.settrue
+        has_shock6.settrue
+        program check_items
+END
+
+
+
+LIST cond2_change
+BEGIN
+        script cond11
+        script cond22
+END
+
+
+SCRIPT cond11
+BEGIN
+        has_cond11.settrue
+        has_cond22.setfalse
+        program check2_conds2
+END
+
+SCRIPT cond22
+BEGIN
+        has_cond11.setfalse
+        has_cond22.settrue
+        program check2_conds2
+END
+
+
+
+PROGRAM check2_conds2
+BEGIN
+
+if (has_cond11){
+
+call main.cb_ioap_sh.enable
+call main.cb_ioap_ad.enable
+
+}
+
+if (has_cond22){
+
+call main.cb_ioap_sh.setvalue 2
+call main.cb_ioap_ad.setvalue 2
+
+call main.cb_ioap_sh.disable
+call main.cb_ioap_ad.disable
+
+}
+END
+
+PROGRAM check_items
+BEGIN
+
+     
+        
+    if has_shock2 {
+               
+                call main.tx_secp2.show
+				call main.ed_secp2.show
+				call main.ed_pr2.show    
+        }
+
+if !has_shock2  {
+                call main.tx_secp2.hide
+				call main.ed_secp2.hide
+				call main.ed_pr2.hide
+			
+        }
+		
+		    if has_shock3 {
+               
+                call main.tx_secp3.show
+				call main.ed_secp3.show
+				call main.ed_pr3.show    
+        }
+
+if !has_shock3  {
+                call main.tx_secp3.hide
+				call main.ed_secp3.hide
+				call main.ed_pr3.hide
+			
+        }
+ 
+     if has_shock4 {
+               
+                call main.tx_secp4.show
+				call main.ed_secp4.show
+				call main.ed_pr4.show    
+        }
+
+if !has_shock4  {
+                call main.tx_secp4.hide
+				call main.ed_secp4.hide
+				call main.ed_pr4.hide
+			
+        }
+		
+		    if has_shock5 {
+               
+                call main.tx_secp5.show
+				call main.ed_secp5.show
+				call main.ed_pr5.show    
+        }
+
+if !has_shock5  {
+                call main.tx_secp5.hide
+				call main.ed_secp5.hide
+				call main.ed_pr5.hide
+			
+        }
+ 
+     if has_shock6 {
+               
+                call main.tx_secp6.show
+				call main.ed_secp6.show
+				call main.ed_pr6.show    
+        }
+
+if !has_shock6  {
+                call main.tx_secp6.hide
+				call main.ed_secp6.hide
+				call main.ed_pr6.hide
+			
+        }
+		
+if has_ad1  {		
+         call main.tx_np.show
+		 call main.ed_np.show
+		 
+		 }
+		 
+ if has_ad2  {		
+         call main.tx_np.hide
+		 call main.ed_np.hide
+		 }  
+
+END
+		
+HELP hlp1,   view("help pciom")
+RESET res1
+OK ok1,      label("OK")
+CANCEL can1, label("Cancel")
+SUBMIT sub1, label("Submit")
+COPY copy1
+
+
+
+DIALOG res,  tabtitle("Results")
+  BEGIN
+    GROUPBOX gb1 10     10    360  80,                      ///
+             label("Price changes ")
+             
+    CHECKBOX   chk_op1        20    +25    60    .,                   ///
+             label("List:")   default(0)  
+             
+
+    
+    GROUPBOX gb2     10     140    360  120,                      ///
+             label("Graph: ")
+             
+    CHECKBOX   chk_op3     20    +25    60    .,                   ///
+             label("Display:") default(0)
+             
+             
+    TEXT  txt4     20    +25    40      .,                 ///  
+               label("Save:")                                  ///      
+         
+    
+    FILE  fnamegs      80    @     280      .,                 ///
+    label ("Browse...")    save option(sgra)                   ///
+    filter("Stata Gragh (*.gph)|*.gph|All Files (*.*)|*.*")
+    
+    TEXT  chk_op5     20    +25    40      .,                 ///  
+                   label("Export:")                                  ///      
+            
+        
+        FILE  fnamege      80    @     280      .,                 ///
+        label ("Browse...")    save option(egra)                   ///
+        filter("MetaFile (*.wmf)|*.wmf|EPS (*.eps)|*.eps")
+
+		
+		
+		
+END
+
+
+PROGRAM command
+BEGIN
+        put "pciom "
+            require main.vn_code
+        varlist [main.vn_code]
+
+        put " "
+     
+        beginoptions
+        optionarg main.vn_sname
+	  
+        require main.dbiom
+      optionarg main.dbiom 
+	  
+	 optionarg main.ed_np 
+	   optionarg main.cb_nshocks
+	   optionarg main.cb_ioap
+	   optionarg main.cb_ioap_ad
+	   optionarg main.cb_ioap_sh
+
+      optionarg main.ed_secp1 
+	  optionarg main.ed_pr1
+	  if has_shock2  {
+	  optionarg main.ed_secp2 
+	  optionarg main.ed_pr2
+	  }
+	  
+	  	  if has_shock3  {
+	  optionarg main.ed_secp3 
+	  optionarg main.ed_pr3
+	  }
+	  
+	  	  if has_shock4  {
+	  optionarg main.ed_secp4 
+	  optionarg main.ed_pr4
+	  }
+	  
+	  
+	  	  if has_shock5  {
+	  optionarg main.ed_secp5 
+	  optionarg main.ed_pr5
+	  }
+	  
+	  	  if has_shock6  {
+	  optionarg main.ed_secp6 
+	  optionarg main.ed_pr6
+	  }
+	  
+
+
+	  
+
+      optionarg res.fnamegs
+      optionarg res.fnamege
+      
+       if         res.chk_op1 {
+                                                
+                                                put "lres("
+                                                put res.chk_op1
+                                                put ")"
+                                       }
+                                       
+                        if res.chk_op3 {
+                                                
+                                                put "dgra("
+                                                put res.chk_op3
+                                                put ")"
+                                       }               
+
+									   
+           endoptions 
+       
+        
+END

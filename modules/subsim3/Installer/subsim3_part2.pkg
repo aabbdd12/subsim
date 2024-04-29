@@ -1,0 +1,84 @@
+* November2014 - 
+v 3
+d {bf:subsim_man        : SUBSIM: PART_2 of the package}
+d
+d Version       : Version       3.00   
+d Date          : November      2014 
+d Stata Version : Required  11.0 and higher
+d
+d Authors : {bf:Abdelkrim Araar}        {bf:Paolo Verme}
+d Emails  : {browse "mailto:aabd@ecn.ulaval.ca":aabd@ecn.ulaval.ca}     {browse "mailto:pverme@worldbank.org":pverme@worldbank.org} 
+d Website : {browse "http://www.stata.com":visit the SUBSIM website}
+d
+f files/main/pschset_i_3.dlg   
+f files/main/pschset_i_4.dlg   
+f files/main/pschset_i_5.dlg   
+f files/main/pschset_i_6.dlg   
+f files/main/pschset_i_7.dlg   
+f files/main/pschset_i_8.dlg   
+f files/main/pschset_i_9.dlg   
+f files/main/subjob11.ado      
+f files/main/subjob21.ado      
+f files/main/subjob22.ado      
+f files/main/subjob23.ado      
+f files/main/subjob24.ado      
+f files/main/subjob25.ado      
+f files/main/subjob31.ado      
+f files/main/subjob32.ado      
+f files/main/subjob33.ado      
+f files/main/subjob34.ado      
+f files/main/subjob35.ado      
+f files/main/subjob41.ado      
+f files/main/subjob42.ado      
+f files/main/subjob43.ado      
+f files/main/subjob44.ado      
+f files/main/subjob45.ado      
+f files/main/subjob46.ado  
+f files/main/subjob46b.ado     
+f files/main/subjob47.ado      
+f files/main/subjob48.ado      
+f files/main/subjob49.ado      
+f files/main/subjobgr1.ado     
+f files/main/subjobgr10.ado    
+f files/main/subjobgr2.ado     
+f files/main/subjobgr3.ado     
+f files/main/subjobgr4.ado     
+f files/main/subjobgr5.ado     
+f files/main/subjobgr6.ado     
+f files/main/subjobgr7.ado     
+f files/main/subjobgr8.ado     
+f files/main/subjobgr9.ado     
+f files/main/subjobinc.ado     
+f files/main/subjobineq.ado    
+f files/main/subjobpov.ado     
+f files/main/subjobstat.ado    
+f files/main/tabtit.ado        
+f files/main/tb_options.idlg   
+f files/main/trexqua.ado       
+f files/main/trexqua.dlg       
+f files/main/trexqua.hlp       
+f files/main/xml_tab.ado       
+f files/main/xml_taba2.ado     
+f files/main/xml_tab_options.txt
+f files/main/_nargs.ado        
+f files/main/_subsim_menu.ado 
+f files/main/graph_header.idlg
+f files/main/addSMenu.ado
+f files/main/asdbsave_ind.ado      
+f files/main/asubini_ind.ado   
+f files/main/asubini2_ind.ado     
+f files/main/asubini_ind.dlg  
+f files/main/asubsim_ind.ado       
+f files/main/asubsim_ind.dlg 
+f files/main/items_info_ind.idlg  
+f files/main/pciom_ind.ado
+f files/main/pciom.ado
+f files/main/pciom.hlp
+f files/main/pciom.dlg
+f files/main/_subsim_inst.ado
+f files/main/_subsim_vers.ado
+f files/main/subsim_man.dlg
+f files/main/asubsim_ind.sthlp
+f files/main/subsim.hlp
+  
+

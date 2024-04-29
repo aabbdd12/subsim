@@ -1,0 +1,49 @@
+.asubsim_dlg.main.vn_pcexp.setvalue "pc_exp_tot"
+.asubsim_dlg.main.vn_hhs.setvalue "hhsize"
+.asubsim_dlg.main.vn_pl1.setvalue "pline"
+.asubsim_dlg.main.cb_wmet.setvalue "1"
+.asubsim_dlg.main.dbsamex.setvalue "C:\subsim2\examples\ex2\example_2"
+.asubsim_dlg.main.ed_cname.setvalue "MyCountry"
+.asubsim_dlg.main.ed_ysvy.setvalue "2008"
+.asubsim_dlg.main.ed_ysim.setvalue "2013"
+.asubsim_dlg.main.ed_lcur.setvalue "LocCur"
+.asubsim_dlg.main.cb_tr.setvalue "1"
+.asubsim_dlg.gr_options.ck_folgr.seton
+.asubsim_dlg.gr_options.ed_folgr.setvalue "C:\subsim2\examples\ex2"
+.asubsim_dlg.main.vn_hhg.setvalue ""
+.asubsim_dlg.gr_options.ck_graphs.seton
+.asubsim_dlg.gr_options.ed_gra.setvalue "off"
+.asubsim_dlg.tb_options.ck_excel.seton
+.asubsim_dlg.tb_options.fnamex.setvalue "C:\subsim2\examples\ex2\MyCountry2.xml"
+.asubsim_dlg.gr_options.en_min1.setvalue "0.01"
+.asubsim_dlg.gr_options.en_max1.setvalue "0.95"
+.asubsim_dlg.gr_options.en_opt1.setvalue "rtype(prc) xtitle(Percentiles (p)) title(Figure 01: The expenditures on the good relatively to the total expenditures (%))"
+.asubsim_dlg.gr_options.en_min2.setvalue "0.01"
+.asubsim_dlg.gr_options.en_max2.setvalue "0.95"
+.asubsim_dlg.gr_options.en_opt2.setvalue "rtype(prc) xtitle(Percentiles (p)) title(Figure 02: The per capita benefits through the items)"
+.asubsim_dlg.gr_options.en_min10.setvalue "0"
+.asubsim_dlg.gr_options.en_max10.setvalue "200"
+.asubsim_dlg.items_info.en_inf1.setvalue "0"
+.asubsim_dlg.items_info.cb_items.setvalue  2
+.asubsim_dlg.items_info.ed_items.setvalue  2
+.asubsim_dlg.items_info.en_sn1.setvalue  "Flour"
+.asubsim_dlg.items_info.en_qu1.setvalue  "kg"
+.asubsim_dlg.items_info.vn_item1.setvalue  "pc_exp_flour"
+.asubsim_dlg.items_info.cb_ps1.setvalue  2
+.asubsim_dlg.items_info.en_pr1.setvalue  ""
+.asubsim_dlg.items_info.en_su1.setvalue  "0"
+.asubsim_dlg.items_info.en_fp1.setvalue  ""
+.asubsim_dlg.items_info.en_elas1.setvalue  "-0.3"
+.asubsim_dlg.items_info.en_sn2.setvalue  "Rice"
+.asubsim_dlg.items_info.en_qu2.setvalue  "kg"
+.asubsim_dlg.items_info.vn_item2.setvalue  "pc_exp_rice"
+.asubsim_dlg.items_info.cb_ps2.setvalue  1
+.asubsim_dlg.items_info.en_pr2.setvalue  "0.14"
+.asubsim_dlg.items_info.en_su2.setvalue  "0.4"
+.asubsim_dlg.items_info.en_fp2.setvalue  "0.24"
+.asubsim_dlg.items_info.en_elas2.setvalue  "-0.5"
+pschset i_psch1 , nblock(2) bun(2) mxb1(36) sub1(.3) tr1(.1) sub2(0) tr2(.4)
+.asubsim_dlg.items_info.bu_pr1.setlabel "i_psch1"
+pschset f_psch1 , nblock(2) bun(2) mxb1(36) sub1(.2) tr1(.2) sub2(0) tr2(.4)
+.asubsim_dlg.items_info.bu_fr1.setlabel "f_psch1"
+cap use C:\subsim2\examples\example.dta , replace

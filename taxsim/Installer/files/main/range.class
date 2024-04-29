@@ -1,0 +1,21 @@
+*! version  version 1.00  15-December-2015   M. Araar Abdelkrim & M. Paolo verme
+ version 13
+        class range {
+                         double min
+                         double max
+			             double tax
+        }
+		
+	program .new
+                        if "`0'" != "" {
+                                .set `0'
+                        }
+        end
+
+        program .set
+                     args min max tax 
+                         .min     = `min'
+                         .max     = `max'
+			             .tax     = `tax'
+
+        end

@@ -1,0 +1,28 @@
+*! version 3.00  15-December-2014   M. Araar Abdelkrim & M. Paolo verme
+ version 10
+        class oinf {
+                         string  vmax
+                         string  vprice
+			             string  vsub
+			             double  oinf
+						 double bcut
+				         double sfee
+        }
+		
+	program .new
+                        if "`0'" != "" {
+                                .set `0'
+                        }
+        end
+
+        program .set
+                     args vmax vprice vsub oinf bcut sfee
+                       
+                         .vmax     = "`vmax'"
+			             .vprice   = "`vprice'"
+			             .vsub     = "`vsub'"
+						 .oinf     =  `oinf'
+						 .bcut      =  `bcut'
+						 .sfee      =  `sfee'
+
+        end

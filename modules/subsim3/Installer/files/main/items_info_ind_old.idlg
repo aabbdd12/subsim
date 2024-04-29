@@ -1,0 +1,129 @@
+
+
+
+DIALOG items_info_ind,  tabtitle("Items and I/O matrix")
+
+BEGIN
+  DEFINE colu0  00
+  DEFINE colu1 50
+  DEFINE colu11 135
+  DEFINE colu2 180
+  DEFINE colu3 290
+  DEFINE colu4 380
+  DEFINE colu5 470
+  DEFINE colu6 560
+  DEFINE colu7 650
+  DEFINE colu8 740
+  
+  DEFINE coluwd0 55
+  DEFINE coluwd1 100
+  DEFINE coluwd11 80
+  DEFINE coluwd111 40
+
+
+/*
+    
+ TEXT     tx_ini 20     20       120       .,           ///
+          label("Initialise information with:") 
+  */    
+
+
+
+ 
+			
+ 
+
+    
+ TEXT     tx_ini 50     20       120       .,           ///
+          label("Initialise information with:") 
+      
+ COMBOBOX cb_ini 180      @          140       .,       ///
+          contents(ini_contents)                             ///
+          values(ini_values)                                     ///                            
+          onselchangelist(ini_change) default(1)                  ///
+          dropdownlist option(oinf) 
+
+
+ TEXT     tx_items 330      @      90       .,           ///
+          label("Number of items*:") 
+          
+ COMBOBOX cb_items 430      @         80       .,        ///
+          contents(item_contents)                                ///
+          onselchangelist(item_change) default(1)                          ///
+          dropdownlist option(nitems)  
+	  
+ EDIT    ed_items 430      @         80       .,        ///
+         option(nitems) 		  
+		 
+ 
+  
+  GROUPBOX chk_per11  40    +100  470 120,                         ///
+            label("Items info: ")   		   
+   
+  TEXT     tx_fr colu1         +30     70    .,           ///
+          label("Short names")
+  
+  TEXT     tx_fr2 colu2         @      100    .,           ///
+          label("Varnames*")
+  
+  TEXT     tx_sz  colu3          @    coluwd1    .,           ///
+        label("Elasticity")   
+                 
+				 
+ 
+ VARNAME   var_sn     colu1      +25       coluwd1    .,           ///
+        label("")      option(snames)     
+  
+  VARNAME  var_item    colu2     @         coluwd1    .,           ///
+        label("")  option(itnames)  
+        
+  VARNAME  var_elas    colu3     @         coluwd1    .,           ///
+        label("")  option(elas)
+		
+
+   GROUPBOX chk_per22  40    +85  470 140,                         ///
+            label("Price shock and I/O matrix info: ")    
+ 			 
+				 
+ 
+    TEXT  tx_dbsfile     50    +20    160      .,                 ///  
+         label("Data file of the I/O matrix:*")                                
+   
+    FILE  dbiom      220    @     260      .,                    ///
+    label ("Browse...")    save option("iom")                   ///
+    filter("MetaFile (*.dta)*.dta*.* (*.*)*.*")   
+                   
+    TEXT txt_secp     50    +25    300      .,                 ///  
+                  label("The position of the sector concerned by the price change:*")  
+			  
+       
+    EDIT  ed_secp   400    @     80      .,                 ///
+              option(sepc)      default(1) 
+			  
+	TEXT txt_pr    50    +30    280      .,                 ///  
+                  label("The level of the exogeneous price change (in %):*   ")                           
+       
+    EDIT  ed_pr    400    @    80      .,                 ///
+                  default(10) option(pr) 
+			  
+			  
+    TEXT txt_vnmatch     50    +25    300      .,                 ///  
+                  label("Varname of matching structure:")  
+	
+    VARNAME  vn_vnmatch   400    @     80     .,                 ///
+              option(match)      default()                          
+  
+  
+			
+
+		
+END
+
+
+
+
+
+
+
+
+
