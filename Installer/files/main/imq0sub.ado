@@ -75,47 +75,46 @@ qui replace `qvar' = (((`bexp'-`ex`j'')/`tr`i'')+(`mxb`j''))*(`bexp'>`ex`j'') if
 };
 };
 
+/* VDT: the block is the last i whose lower bound, at the tariff of block i,  */
+/* costs less than the expenditure -- the rule of incsub, imwsub, imqsub and   */
+/* imrsub (10-November-2026: the quantities used to read the next block).      */
 if (`str' == 2) {;
-forvalues i=1/`nblock' {;
+tempvar cls;
+qui gen `cls' = 1;
+forvalues i=2/`nblock' {;
 local j=`i'-1;
-local ex0=0 ;
-if `j' != 0        local ex`j' = `mxb`j''*`tr`j'';
-if `i' != `nblock' local ex`i' = `mxb`i''*`tr`i'';		
-if `i' != `nblock' qui replace `qvar' = ((`bexp')/`tr`i'')       if (`bexp'>=`ex`j'') & (`bexp'<=`ex`i'') ;
-if `i' == `nblock' qui replace `qvar' = ((`bexp')/`tr`nblock'')  if (`bexp'>=`ex`j'') ;
+qui replace `cls' = `i' if (`bexp' > `mxb`j''*`tr`i'') & `bexp'!=. ;
+};
+forvalues i=1/`nblock' {;
+qui replace `qvar' = `bexp'/`tr`i'' if `cls'==`i' & `bexp'!=. ;
 };
 };
 
-
+/* Mixed: IBT up to block bcut, then VDT; the blocks found as above (10-November- */
+/* 2026: the VDT blocks used to be read one block off).                          */
 if (`str' == 3) {;
-
 forvalues i=1/`bcut' {;
 local j = `i' - 1;
-local l = `i' + 1;
 local ex`i' = `ex`j''+ ( `mxb`i'' - `mxb`j'' ) *`tr`i'' ;
 };
-forvalues i=1/`bcut' {;
-local j = `i' - 1;
-/* dis `i' "=== " `ex`j'' " --IBT - " `ex`i'' " :::" `tr`i'' ;	*/	
-qui replace `qvar' = (((`bexp'-`ex`j'')/`tr`i'')+(`mxb`j''))*(`bexp'<=`ex`i'')*(`bexp'>`ex`j'') if (`bexp'<=`ex`i'') & (`bexp'>`ex`j'') & `bexp'!=.  ;
-if `i' == `bcut'  {;
-qui replace `qvar' = (((`bexp'-`ex`j'')/`tr`i'')+(`mxb`j''))*(`bexp'>`ex`j'') if (`bexp'>`ex`j'') & `bexp'!=.  ;
+tempvar cls;
+qui gen `cls' = 1;
+forvalues i=2/`bcut' {;
+local j=`i'-1;
+qui replace `cls' = `i' if (`bexp' > `ex`j'') & `bexp'!=. ;
 };
-};
-
-
 local bcut1=`bcut'+1 ;
 forvalues i=`bcut1'/`nblock' {;
 local j=`i'-1;
-local l = `i' + 1;
-local ex0=0 ;
-if `i' != `nblock'        local ex`i' = `mxb`i''*`tr`i'';
-if `i' != `nblock'        local ex`l' = `mxb`i''*`tr`l'';
-if `i' == `nblock'        local ex`i' = `mxb`j''*`tr`i'';		
-if `i' != `nblock' qui replace `qvar' = ((`bexp')/`tr`i'')       if (`bexp'>=`ex`i'') & (`bexp'<=`ex`l'') & `bexp'!=. ;
-if `i' == `nblock' qui replace `qvar' = ((`bexp')/`tr`nblock'')  if (`bexp'>=`ex`i'') & `bexp'!=. ;
+qui replace `cls' = `i' if (`bexp' > `mxb`j''*`tr`i'') & `bexp'!=. ;
 };
-
+forvalues i=1/`bcut' {;
+local j = `i' - 1;
+qui replace `qvar' = ((`bexp'-`ex`j'')/`tr`i'')+(`mxb`j'') if `cls'==`i' & `bexp'!=. ;
+};
+forvalues i=`bcut1'/`nblock' {;
+qui replace `qvar' = `bexp'/`tr`i'' if `cls'==`i' & `bexp'!=. ;
+};
 };
 
 
