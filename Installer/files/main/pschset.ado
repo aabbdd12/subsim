@@ -84,8 +84,11 @@ INISAVE(string)
 
 if (`oinf'==1) {;
 tokenize `namelist';
-if ("`sub1'"=="0") local issub=0;
-if ("`sub1'"~="0") local issub=1;
+/* subsidies when any block has one, not only the first */
+local issub=0;
+forvalues i=1/`nblock' {;
+if (`sub`i''!=0) local issub=1;
+};
 if ("`bun'"~="1")  local bun=2;
 if ("`sfee'"=="")  local sfee=1;
 if ("`bcut'"=="")  local bcut=`nblock';

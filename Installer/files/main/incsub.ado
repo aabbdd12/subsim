@@ -19,6 +19,7 @@ capture program drop incsub;
 program define incsub, rclass ;
 version 9.2;
 syntax varlist(min=1 max=1)[ ,   IPSCH(string) hsize(varname)];
+tokenize `varlist';
 
 local n    =  `.`ipsch'.nblock'; 
 local bun  =  `.`ipsch'.bun'; 
