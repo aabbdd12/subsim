@@ -223,7 +223,7 @@ tempvar bexp;
 if `bun1'==1 qui gen `bexp' = `1'*`hsize';
 if `bun1'==2 qui gen `bexp' = `1';
 
-qui replace `bexp' = max(0,`bexp'-`sfee2'+`sfee1') ;
+qui replace `bexp' = max(0,`bexp'-`sfee1') ;
 
 
 
@@ -270,24 +270,12 @@ if `nn' >= 2 qui replace `class' = `nn'         if (`bexp'>`q'[`nn'-1]*`p1'[`nn'
 
 
 if `str1'==3      {;
-if `nn1' > 1 {;
-forvalues i = 2/`bcut1' {;
+/* the class follows the structure of each joint segment: IBT or VDT */
+forvalues i = 2/`nn' {;
 local j=`i'-1;
- qui replace `class' = `i'  if (`bexp'>`se`j'' ) ;
+if `st1'[`i']==1 qui replace `class' = `i'  if (`bexp'>`se`j'' ) ;
+if `st1'[`i']==2 qui replace `class' = `i'  if `bexp'>(`q'[`j']*`p1'[`i'])  ;
 };
-};
-
-local bc11 = `bcut1'-1;
-qui replace `class' = `bcut1'         if (`bexp'>`se`bc11'')  ;
-
-local bcut11= `bcut1'+1;
-if `nn1' > 1 {;
-forvalues i = `bcut11'/`nn1' {;
-local j=`i'-1;
- qui replace `class' = `i'  if `bexp'>(`q'[`j']*`p1'[`i'])  ; 
-};
-};
-if `nn' >= 2 qui replace `class' = `nn'         if (`bexp'>`q'[`nn'-1]*`p1'[`nn'])  ;
 };
 
 cap drop _class;
@@ -304,6 +292,8 @@ local j=`i'-1;
 };
 if `nn1'>=1  qui replace  `wvar' = `basev`nn'_`nn'' - (`bexp'-`se`nn1'_`nn'')*(`p2_`nn''[`nn']/`p1_`nn''[`nn'] - 1)           if (`class' == `nn' )  ;
 
+/* the change of the subscription fee, paid by those who buy the good */
+qui replace `wvar' = `wvar' - (`sfee2'-`sfee1') if `1'>0 & `1'<. ;
 if `bun1'==1 qui replace `wvar' = `wvar'/ `hsize' ;
 
 

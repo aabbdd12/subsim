@@ -29,8 +29,8 @@ local tfpsch = ""+`fpsch'[`i'];
 local telas   = `elas'[`i'];
 imq0sub ``i'' , ipsch(`tipsch') hsize(`hsize');
 tempvar imq0sub_``i'' ;
-if (`wappr'==1)  imqsub ``i''          , ipsch(`tipsch') fpsch(`tfpsch') hsize(`hsize') elas(`telas');
-if (`wappr'==2)  imqsub_cob_doug ``i'' , ipsch(`tipsch') fpsch(`tfpsch') hsize(`hsize') ;
+/* the change of quantity follows the elasticity, whatever the welfare approach */
+imqsub ``i'' , ipsch(`tipsch') fpsch(`tfpsch') hsize(`hsize') elas(`telas');
 tempvar imqsub_``i'' ;
 qui gen  `imqsub_``i''' = __imqsub;
 local nlist `nlist' `imqsub_``i''' ;

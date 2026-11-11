@@ -319,7 +319,7 @@ cap drop `bexp_`z'';
 tempvar bexp_`z';
 if `bun1'==1  qui gen `bexp_`z'' = `nva'*`hsize';
 if `bun1'==2  qui gen `bexp_`z'' = `nva';
-qui replace `bexp_`z'' = max(0,`bexp_`z''-`sfee2'+`sfee1') ;
+qui replace `bexp_`z'' = max(0,`bexp_`z''-`sfee1') ;
 
 
 
@@ -368,24 +368,12 @@ if `nn' >= 2 qui replace `class' = `nn'         if (`bexp_`z''>`q'[`nn'-1]*`p1'[
 
 
 if `str1'==3      {;
-if `nn1' > 1 {;
-forvalues i = 2/`bcut1' {;
+/* the class follows the structure of each joint segment: IBT or VDT */
+forvalues i = 2/`nn' {;
 local j=`i'-1;
- qui replace `class' = `i'  if (`bexp_`z''>`se`j'' ) ;
+if `st1'[`i']==1 qui replace `class' = `i'  if (`bexp_`z''>`se`j'' ) ;
+if `st1'[`i']==2 qui replace `class' = `i'  if `bexp_`z''>(`q'[`j']*`p1'[`i'])  ;
 };
-};
-
-local bc11 = `bcut1'-1;
-qui replace `class' = `bcut1'         if (`bexp_`z''>`se`bc11'')  ;
-
-local bcut11= `bcut1'+1;
-if `nn1' > 1 {;
-forvalues i = `bcut11'/`nn1' {;
-local j=`i'-1;
- qui replace `class' = `i'  if `bexp_`z''>(`q'[`j']*`p1'[`i'])  ; 
-};
-};
-if `nn' >= 2 qui replace `class' = `nn'         if (`bexp_`z''>`q'[`nn'-1]*`p1'[`nn'])  ;
 };
 
 

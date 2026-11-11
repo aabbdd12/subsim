@@ -31,6 +31,19 @@ local y1 =0;
 
 tempvar price_def;
 qui gen `price_def' =1;
+/* Cobb-Douglas: income net of the initial subscription fees of all the items */
+tempvar netinc cd_dfee;
+if (`wappr'==2) {;
+qui gen `netinc' = `pcexp';
+qui gen `cd_dfee' = 0;
+forvalues i=1/$indica {;
+local tipsch = ""+`ipsch'[`i'];
+local tsfee  = `.`tipsch'.sfee';
+local tbun   = `.`tipsch'.bun';
+if `tbun'==1 qui replace `netinc' = `netinc' - `tsfee'/`hsize' if ``i''>0 & ``i''<. ;
+if `tbun'==2 qui replace `netinc' = `netinc' - `tsfee'         if ``i''>0 & ``i''<. ;
+};
+};
 tempvar tot_imp;
 gen `tot_imp' = 0;
 forvalues i=1/$indica {;
@@ -45,8 +58,10 @@ imwsub ``i'' , ipsch(`tipsch') fpsch(`tfpsch') hsize(`hsize');
 };
 
 if (`wappr'==2) {;
-                  imwsub_cob_doug ``i'' , ipsch(`tipsch') fpsch(`tfpsch') hsize(`hsize') pcexp(`pcexp');
+                  imwsub_cob_doug ``i'' , ipsch(`tipsch') fpsch(`tfpsch') hsize(`hsize') pcexp(`pcexp') netinc(`netinc');
 				  qui replace `price_def' = `price_def' * __tdef;
+				  qui replace `cd_dfee' = `cd_dfee' + __cdfee;
+				  cap drop __cdfee;
 				};
 				
 tempvar imwsub_`tname' ;
@@ -61,7 +76,7 @@ qui replace `tot_imp'=max(`tot_imp', -`pcexp');
 
 if (`wappr'==2) {;
 tempvar tot_imp;
-qui gen `tot_imp' =( 1 / `price_def' -  1 )*`pcexp' ;
+qui gen `tot_imp' = (`netinc' - `cd_dfee')/`price_def' - `netinc' ;
 };
 
 qui svyset ;
